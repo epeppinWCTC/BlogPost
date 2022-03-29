@@ -20,15 +20,20 @@ namespace BlogPost.Services
                 Console.WriteLine("3. Display Posts");
                 Console.WriteLine("4. Add Post");
                 choice = Console.ReadLine();
+                var blogService = new BlogService();
                 switch (choice)
                 {
                     case "1":
+                        blogService.ShowBlogs();
                         break;
                     case "2":
+                        blogService.AddBlog();
                         break;
                     case "3":
+                        blogService.ShowPosts();
                         break;
                     case "4":
+                        blogService.AddPost();
                         break;
                 }
             } while (choice != "x");
