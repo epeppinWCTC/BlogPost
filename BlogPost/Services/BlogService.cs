@@ -77,13 +77,13 @@ namespace BlogPost.Services
 
                     var posts = context.Posts.Where(x => x.BlogId == blogid);
                 foreach (var post in posts ) {
-                    System.Console.WriteLine($"\tPost {post.PostId} {post.Title}");
+                    System.Console.WriteLine($"\tPost {post.PostId} {post.Title} {post.Content}");
                 }
                 }
-                catch (NullReferenceException e)
+                catch (Exception e)
                 {
-                    Console.WriteLine("None found please go back create a post first");
-                    AddPost();
+                    Console.WriteLine(e.Message);
+                    Console.WriteLine("Unable to find posts because of error above try again");
                 }
             }
         }
